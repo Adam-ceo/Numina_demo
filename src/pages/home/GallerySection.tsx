@@ -51,6 +51,7 @@ export default function GallerySection({ onNavigate }: GallerySectionProps) {
                   alt={item.title}
                   referrerPolicy="no-referrer"
                   loading="lazy"
+                  width={600} height={800}
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
               </div>

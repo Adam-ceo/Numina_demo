@@ -1,10 +1,10 @@
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import PageLayout from "../components/layout/PageLayout";
 
 export default function AboutPage() {
   return (
     <PageLayout maxWidth="4xl">
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+      <m.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
         <span className="text-numina-sage font-bold text-[10px] md:text-xs uppercase tracking-[0.3em] mb-6 md:mb-8 block text-center md:text-left">A mi történetünk</span>
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-numina-dark leading-[1.1] mb-12 md:mb-16 text-center md:text-left">
           Budapest szívében, <br /><span className="text-numina-sage italic">szívvel lélekkel.</span>
@@ -12,7 +12,8 @@ export default function AboutPage() {
 
         <div className="relative group overflow-hidden rounded-[2rem] md:rounded-[2.5rem] shadow-2xl mb-12 md:mb-24">
           <img
-            src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&q=80&w=1400"
+            src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&q=80&fm=webp&w=1400"
+            width={1400} height={875}
             className="w-full aspect-[4/3] md:aspect-[16/9] object-cover transition-transform duration-1000 group-hover:scale-105"
             alt="Numina Caffè kávézó belső tere Budapesten"
             referrerPolicy="no-referrer"
@@ -46,7 +47,7 @@ export default function AboutPage() {
             "Nem csak kávét főzünk – közösséget építünk."
           </p>
         </div>
-      </motion.div>
+      </m.div>
     </PageLayout>
   );
 }

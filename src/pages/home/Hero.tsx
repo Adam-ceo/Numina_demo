@@ -1,5 +1,5 @@
 import { ChevronRight } from "lucide-react";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import type { NavigateFn } from "../../types";
 
 interface HeroProps {
@@ -10,7 +10,7 @@ export default function Hero({ onNavigate }: HeroProps) {
   return (
     <section id="hero" className="relative pt-32 pb-16 md:pt-48 md:pb-32 flex items-center overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -30,9 +30,9 @@ export default function Hero({ onNavigate }: HeroProps) {
               Hol találsz minket?
             </button>
           </div>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2 }}
@@ -40,13 +40,15 @@ export default function Hero({ onNavigate }: HeroProps) {
         >
           <div className="absolute inset-0 bg-numina-sage/5 rounded-[2.5rem] rotate-3 -z-10 translate-x-2 translate-y-2 md:translate-x-0 md:translate-y-0 max-w-[95%] md:max-w-none mx-auto" />
           <img
-            src="https://images.unsplash.com/photo-1759244328512-e4a9128150f4?auto=format&fit=crop&q=80&w=1200"
+            srcSet="/hero-480.webp 480w, /hero-800.webp 800w, /hero-1200.webp 1200w"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
+            src="/hero-1200.webp"
             alt="Numina Caffè belső tér — botanikus kávézó Budapest szívében"
-            referrerPolicy="no-referrer"
             fetchPriority="high"
+            width={1200} height={900}
             className="rounded-[2rem] object-cover w-full aspect-[4/3] shadow-2xl relative z-10"
           />
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

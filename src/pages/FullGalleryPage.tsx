@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from "react";
 import { X, ChevronRight, Search } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { m, AnimatePresence } from "motion/react";
 import { GALLERY_IMAGES, GALLERY_CATEGORIES } from "../data/gallery";
 
 export default function FullGalleryPage() {
@@ -32,7 +32,7 @@ export default function FullGalleryPage() {
 
   return (
     <div className="pt-32 pb-20 md:pt-40 md:pb-40 px-6 max-w-7xl mx-auto">
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+      <m.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
         <span className="text-numina-sage font-bold text-[10px] uppercase tracking-[0.3em] mb-4 block">Vizuális napló</span>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 md:mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-numina-dark leading-tight">
@@ -58,12 +58,12 @@ export default function FullGalleryPage() {
             </button>
           ))}
         </div>
-      </motion.div>
+      </m.div>
 
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
         <AnimatePresence mode="popLayout">
           {filtered.map((img, i) => (
-            <motion.div
+            <m.div
               key={img.src}
               layout
               initial={{ opacity: 0, scale: 0.94 }}
@@ -88,14 +88,14 @@ export default function FullGalleryPage() {
               <div className="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <Search className="w-3.5 h-3.5 text-white" />
               </div>
-            </motion.div>
+            </m.div>
           ))}
         </AnimatePresence>
       </div>
 
       <AnimatePresence>
         {lightboxIdx !== null && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -137,7 +137,7 @@ export default function FullGalleryPage() {
               </button>
             )}
 
-            <motion.div
+            <m.div
               key={lightboxIdx}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -155,7 +155,7 @@ export default function FullGalleryPage() {
                 <p className="text-white/90 font-bold text-sm tracking-wide">{filtered[lightboxIdx].title}</p>
                 <p className="text-white/30 text-[11px] uppercase tracking-widest mt-1">{filtered[lightboxIdx].category}</p>
               </div>
-            </motion.div>
+            </m.div>
 
             {lightboxIdx < filtered.length - 1 && (
               <button
@@ -166,7 +166,7 @@ export default function FullGalleryPage() {
                 <ChevronRight size={20} />
               </button>
             )}
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>

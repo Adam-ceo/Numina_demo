@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Clock, MapPin, Instagram, Facebook, ChevronRight, Mail, Share2 } from "lucide-react";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import PageLayout from "../components/layout/PageLayout";
 import { SITE } from "../config/site";
 
@@ -43,7 +43,7 @@ export default function ContactPage() {
 
   return (
     <PageLayout>
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+      <m.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="grid lg:grid-cols-2 gap-12 lg:gap-20">
         <div className="text-center lg:text-left">
           <span className="text-numina-sage font-bold text-[10px] md:text-xs uppercase tracking-[0.3em] mb-4 md:mb-6 block">Hol érsz el minket?</span>
           <h1 className="text-4xl md:text-6xl font-bold text-numina-dark leading-tight mb-8 md:mb-12">
@@ -114,7 +114,7 @@ export default function ContactPage() {
 
         <div className="bg-numina-grey/30 rounded-[2.5rem] md:rounded-[3rem] p-8 md:p-12 border border-numina-dark/5 h-fit text-left shadow-inner">
           {sent ? (
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-8">
+            <m.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="text-center py-8">
               <div className="w-16 h-16 bg-numina-sage/10 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Mail className="w-8 h-8 text-numina-sage" />
               </div>
@@ -129,7 +129,7 @@ export default function ContactPage() {
               >
                 Új üzenet írása
               </button>
-            </motion.div>
+            </m.div>
           ) : (
             <>
               <h3 className="text-2xl font-bold mb-8 italic text-numina-dark font-serif">Miben segíthetünk?</h3>
@@ -167,7 +167,7 @@ export default function ContactPage() {
             </>
           )}
         </div>
-      </motion.div>
+      </m.div>
     </PageLayout>
   );
 }

@@ -28,9 +28,6 @@
     @apply outline-none ring-2 ring-numina-sage ring-offset-2 ring-offset-white;
   }
 
-  img {
-    content-visibility: auto;
-  }
 }
 
 .btn-primary {

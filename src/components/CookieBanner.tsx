@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { m, AnimatePresence } from "motion/react";
 import type { NavigateFn } from "../types";
 
 const COOKIE_KEY = "numina_cookie" as const;
@@ -19,7 +19,7 @@ export default function CookieBanner({ onNavigate }: CookieBannerProps) {
   return (
     <AnimatePresence>
       {visible && (
-        <motion.div
+        <m.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 100, opacity: 0 }}
@@ -41,7 +41,7 @@ export default function CookieBanner({ onNavigate }: CookieBannerProps) {
           >
             Elfogadom
           </button>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

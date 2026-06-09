@@ -1,6 +1,8 @@
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import type { NavigateFn } from "../../types";
 import { menuPreviewItems } from "../../data/menu";
+
+const menuImageUrl = "https://images.unsplash.com/photo-1461023058943-07fcbe16d735";
 
 interface MenuPreviewProps {
   onNavigate: NavigateFn;
@@ -12,11 +14,15 @@ export default function MenuPreview({ onNavigate }: MenuPreviewProps) {
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div className="relative group overflow-hidden rounded-[2rem] shadow-xl order-last lg:order-first">
           <img
-            src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&q=80&w=1200"
+            srcSet={`${menuImageUrl}?auto=format&fit=crop&q=80&fm=webp&w=600 600w,
+                     ${menuImageUrl}?auto=format&fit=crop&q=80&fm=webp&w=1200 1200w`}
+            sizes="(max-width: 768px) 100vw, 50vw"
+            src={`${menuImageUrl}?auto=format&fit=crop&q=80&fm=webp&w=1200`}
             alt="Szezonális ajánlat"
             referrerPolicy="no-referrer"
             loading="lazy"
             decoding="async"
+            width={1200} height={600}
             className="w-full h-[400px] md:h-[600px] object-cover transition-transform duration-[2s] group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -32,7 +38,7 @@ export default function MenuPreview({ onNavigate }: MenuPreviewProps) {
           <h2 className="text-4xl md:text-5xl font-bold mb-8 md:mb-12 leading-tight">A vendégeink <span className="text-numina-sage">kedvencei</span></h2>
           <div className="space-y-8 md:space-y-10">
             {menuPreviewItems.map((item, i) => (
-              <motion.div
+              <m.div
                 key={i}
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -45,7 +51,7 @@ export default function MenuPreview({ onNavigate }: MenuPreviewProps) {
                   <p className="text-[10px] md:text-xs text-numina-dark/60 font-sans leading-relaxed">{item.desc}</p>
                 </div>
                 <span className="text-numina-sage font-bold text-sm shrink-0 ml-4">{item.price}</span>
-              </motion.div>
+              </m.div>
             ))}
           </div>
           <button

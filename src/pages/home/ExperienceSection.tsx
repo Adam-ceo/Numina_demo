@@ -1,6 +1,6 @@
 import React from "react";
 import { Coffee, Martini, Flower2 } from "lucide-react";
-import { motion } from "motion/react";
+import { m } from "motion/react";
 import type { Page, NavigateFn } from "../../types";
 
 interface Experience {
@@ -52,15 +52,15 @@ export default function ExperienceSection({ onNavigate }: ExperienceSectionProps
     <section className="py-20 md:py-32 xl:py-40 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="mb-16 md:mb-24 xl:mb-32">
-          <motion.p
+          <m.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             className="text-[10px] uppercase tracking-[0.5em] text-numina-sage font-bold mb-4 md:mb-6"
           >
             A Numina Filozófia
-          </motion.p>
-          <motion.h2
+          </m.p>
+          <m.h2
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -68,7 +68,7 @@ export default function ExperienceSection({ onNavigate }: ExperienceSectionProps
           >
             Ahol a természet és a <br />
             <span className="font-serif italic font-normal text-numina-sage">városi elegancia</span> találkozik.
-          </motion.h2>
+          </m.h2>
         </div>
 
         <div className="flex flex-col gap-24 md:gap-32 xl:gap-48">
@@ -78,39 +78,43 @@ export default function ExperienceSection({ onNavigate }: ExperienceSectionProps
               className={`flex flex-col ${exp.align === "left" ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-10 md:gap-20 xl:gap-32`}
             >
               <div className={`w-full md:w-[48%] lg:w-1/2 relative order-1 ${exp.align === "left" ? "md:order-1" : "md:order-2"}`}>
-                <motion.div
+                <m.div
                   initial={{ opacity: 0, scale: 1.1 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 1.5, ease: [0.23, 1, 0.32, 1] }}
+                  transition={{ duration: 0.9, ease: [0.23, 1, 0.32, 1] }}
                   className="aspect-[4/5] md:aspect-[4/3] lg:aspect-[3/4] overflow-hidden rounded-2xl relative z-10 shadow-2xl"
                 >
                   <img
-                    src={`${exp.img}?auto=format&fit=crop&q=80&w=1200`}
+                    srcSet={`${exp.img}?auto=format&fit=crop&q=80&fm=webp&w=600 600w,
+                             ${exp.img}?auto=format&fit=crop&q=80&fm=webp&w=1200 1200w`}
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    src={`${exp.img}?auto=format&fit=crop&q=80&fm=webp&w=1200`}
                     alt={exp.title}
                     referrerPolicy="no-referrer"
                     loading={i === 0 ? "eager" : "lazy"}
-                    decoding={i === 0 ? "sync" : "async"}
+                    decoding="async"
+                    width={1200} height={900}
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-numina-dark/5 mix-blend-multiply" />
-                </motion.div>
+                </m.div>
 
-                <motion.div
+                <m.div
                   initial={{ opacity: 0, x: exp.align === "left" ? -40 : 40 }}
                   whileInView={{ opacity: 0.5, x: exp.align === "left" ? -20 : 20 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1.5, delay: 0.2 }}
+                  transition={{ duration: 0.9, delay: 0.15 }}
                   className={`absolute -bottom-8 md:-bottom-10 ${exp.align === "left" ? "-left-8 md:-left-10" : "-right-8 md:-right-10"} w-2/3 h-2/3 border border-numina-sage/20 rounded-2xl -z-0`}
                 />
               </div>
 
               <div className={`w-full md:w-[52%] lg:w-1/2 order-2 ${exp.align === "left" ? "md:order-2" : "md:order-1"}`}>
-                <motion.div
+                <m.div
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.3 }}
+                  transition={{ duration: 0.7, delay: 0.2 }}
                 >
                   <span className="text-5xl md:text-6xl xl:text-8xl font-serif italic text-numina-sage/10 mb-4 md:mb-6 xl:mb-8 block select-none">
                     {exp.id}
@@ -132,7 +136,7 @@ export default function ExperienceSection({ onNavigate }: ExperienceSectionProps
                     Fedezd fel
                     <div className="w-8 h-px bg-numina-dark/20 group-hover:w-12 group-hover:bg-numina-sage transition-[width,background-color] duration-500" />
                   </button>
-                </motion.div>
+                </m.div>
               </div>
             </div>
           ))}

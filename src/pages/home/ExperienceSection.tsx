@@ -90,6 +90,7 @@ export default function ExperienceSection({ onNavigate }: ExperienceSectionProps
                     alt={exp.title}
                     referrerPolicy="no-referrer"
                     loading={i === 0 ? "eager" : "lazy"}
+                    decoding={i === 0 ? "sync" : "async"}
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-numina-dark/5 mix-blend-multiply" />

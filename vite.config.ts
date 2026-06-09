@@ -10,4 +10,14 @@ export default defineConfig({
       '@': path.resolve(__dirname, '.'),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          motion: ['motion/react'],
+          lucide: ['lucide-react'],
+        },
+      },
+    },
+  },
 });

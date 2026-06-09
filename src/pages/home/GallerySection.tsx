@@ -47,7 +47,7 @@ export default function GallerySection({ onNavigate }: GallerySectionProps) {
             <div key={i} className="flex flex-col gap-4 md:gap-5 group cursor-default">
               <div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-sm border border-black/5">
                 <img
-                  src={`${item.src}?auto=format&fit=crop&q=80&w=800`}
+                  src={item.src}
                   alt={item.title}
                   referrerPolicy="no-referrer"
                   loading="lazy"

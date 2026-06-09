@@ -40,10 +40,11 @@ export default function Hero({ onNavigate }: HeroProps) {
         >
           <div className="absolute inset-0 bg-numina-sage/5 rounded-[2.5rem] rotate-3 -z-10 translate-x-2 translate-y-2 md:translate-x-0 md:translate-y-0 max-w-[95%] md:max-w-none mx-auto" />
           <img
-            src="https://images.unsplash.com/photo-1759244328512-e4a9128150f4?auto=format&fit=crop&q=80&w=800"
+            src="https://images.unsplash.com/photo-1759244328512-e4a9128150f4?auto=format&fit=crop&q=80&w=1200"
             alt="Numina Caffè belső tér — botanikus kávézó Budapest szívében"
             referrerPolicy="no-referrer"
             fetchPriority="high"
+            decoding="async"
             className="rounded-[2rem] object-cover w-full aspect-[4/3] shadow-2xl relative z-10"
           />
         </motion.div>

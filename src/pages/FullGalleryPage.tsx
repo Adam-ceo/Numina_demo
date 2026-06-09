@@ -74,7 +74,7 @@ export default function FullGalleryPage() {
               onClick={() => setLightboxIdx(i)}
             >
               <img
-                src={`${img.src}?auto=format&fit=crop&q=80&w=900`}
+                src={img.src}
                 alt={img.title}
                 referrerPolicy="no-referrer"
                 loading="lazy"
@@ -148,7 +148,7 @@ export default function FullGalleryPage() {
               onClick={e => e.stopPropagation()}
             >
               <img
-                src={`${filtered[lightboxIdx].src}?auto=format&fit=crop&q=90&w=1400`}
+                src={filtered[lightboxIdx].src}
                 alt={filtered[lightboxIdx].title}
                 referrerPolicy="no-referrer"
                 className="max-h-[75vh] w-auto max-w-full object-contain rounded-xl shadow-2xl"

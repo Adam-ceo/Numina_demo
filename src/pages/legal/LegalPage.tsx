@@ -1,17 +1,18 @@
 import React from "react";
 import { ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
-import type { Page } from "../../types";
+import type { NavigateFn } from "../../types";
+import PageLayout from "../../components/layout/PageLayout";
 
 interface LegalPageProps {
   title: string;
   children: React.ReactNode;
-  onNavigate: (p: Page) => void;
+  onNavigate: NavigateFn;
 }
 
 export default function LegalPage({ title, children, onNavigate }: LegalPageProps) {
   return (
-    <div className="pt-32 pb-20 md:pt-40 md:pb-40 px-6 max-w-3xl mx-auto">
+    <PageLayout maxWidth="3xl">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
         <button
           onClick={() => onNavigate("home")}
@@ -25,6 +26,6 @@ export default function LegalPage({ title, children, onNavigate }: LegalPageProp
           {children}
         </div>
       </motion.div>
-    </div>
+    </PageLayout>
   );
 }

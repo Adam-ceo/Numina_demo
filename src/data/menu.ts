@@ -61,8 +61,8 @@ export const foodMenu: MenuSection[] = [
 ];
 
 export const menuPreviewItems: MenuItem[] = [
-  { name: "Flat White", price: "950 Ft", desc: "A tökéletes egyensúly kávé és tejhab között." },
-  { name: "Pisztáciás Sajttorta", price: "1.450 Ft", desc: "Kézzel rétegzett krémsajt alap, pörkölt pisztácia morzsával és házi karamellel." },
-  { name: "Cold Brew Extrakt", price: "1.250 Ft", desc: "18 órán át hidegen áztatva, jegesen szervírozva." },
-  { name: "Uborkás Gintonik", price: "2.450 Ft", desc: "Tanqueray gin és prémium tonik." },
+  coffeeMenu[1].items[0],
+  foodMenu[0].items[0],
+  coffeeMenu[2].items[0],
+  foodMenu[2].items[1],
 ];

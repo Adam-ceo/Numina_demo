@@ -8,6 +8,8 @@ export type Page =
   | "adatvedelem"
   | "impresszum";
 
+export type NavigateFn = (page: Page) => void;
+
 export const NAV_LINKS = [
   { id: "home", label: "Kezdőlap" },
   { id: "about", label: "Történetünk" },

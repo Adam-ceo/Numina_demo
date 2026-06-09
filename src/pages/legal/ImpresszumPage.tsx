@@ -1,7 +1,7 @@
+import type { NavigateFn } from "../../types";
 import LegalPage from "./LegalPage";
-import type { Page } from "../../types";
 
-export default function ImpresszumPage({ onNavigate }: { onNavigate: (p: Page) => void }) {
+export default function ImpresszumPage({ onNavigate }: { onNavigate: NavigateFn }) {
   return (
     <LegalPage title="Impresszum" onNavigate={onNavigate}>
       <h2 className="text-lg font-bold text-numina-dark mt-8 mb-3">A vállalkozás adatai</h2>

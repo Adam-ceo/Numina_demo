@@ -2,12 +2,13 @@ import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronRight, Instagram, Facebook } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import Logo from "./ui/Logo";
-import type { Page } from "../types";
+import type { Page, NavigateFn } from "../types";
 import { NAV_LINKS } from "../types";
+import { SITE } from "../config/site";
 
 interface NavbarProps {
   currentPage: Page;
-  onNavigate: (p: Page) => void;
+  onNavigate: NavigateFn;
 }
 
 export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
@@ -23,13 +24,17 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
 
   useEffect(() => {
     if (!isMobileMenuOpen) return;
-    const handler = (e: MouseEvent) => {
+    const handler = (e: MouseEvent | TouchEvent) => {
       if (navRef.current && !navRef.current.contains(e.target as Node)) {
         setIsMobileMenuOpen(false);
       }
     };
     document.addEventListener("mousedown", handler);
-    return () => document.removeEventListener("mousedown", handler);
+    document.addEventListener("touchstart", handler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+      document.removeEventListener("touchstart", handler);
+    };
   }, [isMobileMenuOpen]);
 
   return (
@@ -182,14 +187,14 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
               <div className="mt-6 pt-5 border-t border-black/5 flex items-center justify-between">
                 <div>
                   <p className="text-[10px] uppercase tracking-[0.2em] text-numina-sage font-bold mb-1">Nyitva ma</p>
-                  <p className="text-xs text-numina-dark/60 font-light">08:00 – 22:00</p>
+                  <p className="text-xs text-numina-dark/60 font-light">{SITE.hours.weekday}</p>
                 </div>
                 <div className="flex gap-2">
-                  <a href="https://www.instagram.com/numina_budapest" target="_blank" rel="noopener noreferrer"
+                  <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" aria-label="Numina Caffé Instagram"
                     className="w-9 h-9 rounded-xl border border-numina-dark/10 flex items-center justify-center text-numina-dark/40 hover:bg-numina-sage hover:text-white hover:border-numina-sage transition-all duration-300">
                     <Instagram size={15} />
                   </a>
-                  <a href="https://www.facebook.com/numinabudapest" target="_blank" rel="noopener noreferrer"
+                  <a href={SITE.facebook} target="_blank" rel="noopener noreferrer" aria-label="Numina Caffé Facebook"
                     className="w-9 h-9 rounded-xl border border-numina-dark/10 flex items-center justify-center text-numina-dark/40 hover:bg-numina-sage hover:text-white hover:border-numina-sage transition-all duration-300">
                     <Facebook size={15} />
                   </a>

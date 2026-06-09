@@ -1,9 +1,9 @@
 import { motion } from "motion/react";
-import type { Page } from "../../types";
+import type { NavigateFn } from "../../types";
 import { menuPreviewItems } from "../../data/menu";
 
 interface MenuPreviewProps {
-  onNavigate: (p: Page) => void;
+  onNavigate: NavigateFn;
 }
 
 export default function MenuPreview({ onNavigate }: MenuPreviewProps) {

@@ -1,9 +1,9 @@
 import { ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
-import type { Page } from "../../types";
+import type { NavigateFn } from "../../types";
 
 interface HeroProps {
-  onNavigate: (p: Page) => void;
+  onNavigate: NavigateFn;
 }
 
 export default function Hero({ onNavigate }: HeroProps) {
@@ -44,7 +44,6 @@ export default function Hero({ onNavigate }: HeroProps) {
             alt="Numina Caffè belső tér — botanikus kávézó Budapest szívében"
             referrerPolicy="no-referrer"
             fetchPriority="high"
-            decoding="async"
             className="rounded-[2rem] object-cover w-full aspect-[4/3] shadow-2xl relative z-10"
           />
         </motion.div>

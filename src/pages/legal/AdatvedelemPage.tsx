@@ -1,7 +1,7 @@
+import type { NavigateFn } from "../../types";
 import LegalPage from "./LegalPage";
-import type { Page } from "../../types";
 
-export default function AdatvedelemPage({ onNavigate }: { onNavigate: (p: Page) => void }) {
+export default function AdatvedelemPage({ onNavigate }: { onNavigate: NavigateFn }) {
   return (
     <LegalPage title="Adatvédelmi Tájékoztató" onNavigate={onNavigate}>
       <p className="text-xs text-numina-dark/40 mb-8">Utolsó módosítás: 2026. január 1. — Az EU 2016/679 rendeletének (GDPR) megfelelően</p>

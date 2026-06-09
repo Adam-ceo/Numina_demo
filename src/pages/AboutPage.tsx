@@ -1,8 +1,9 @@
 import { motion } from "motion/react";
+import PageLayout from "../components/layout/PageLayout";
 
 export default function AboutPage() {
   return (
-    <div className="pt-32 pb-20 md:pt-40 md:pb-40 px-6 max-w-4xl mx-auto">
+    <PageLayout maxWidth="4xl">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
         <span className="text-numina-sage font-bold text-[10px] md:text-xs uppercase tracking-[0.3em] mb-6 md:mb-8 block text-center md:text-left">A mi történetünk</span>
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-numina-dark leading-[1.1] mb-12 md:mb-16 text-center md:text-left">
@@ -46,6 +47,6 @@ export default function AboutPage() {
           </p>
         </div>
       </motion.div>
-    </div>
+    </PageLayout>
   );
 }

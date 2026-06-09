@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { Clock, MapPin, Instagram, Facebook, ChevronRight, Phone, Mail, Share2 } from "lucide-react";
+import { Clock, MapPin, Instagram, Facebook, ChevronRight, Mail, Share2 } from "lucide-react";
 import { motion } from "motion/react";
+import PageLayout from "../components/layout/PageLayout";
+import { SITE } from "../config/site";
 
 export default function ContactPage() {
   const [form, setForm] = useState({ nev: "", email: "", uzenet: "" });
@@ -29,7 +31,7 @@ export default function ContactPage() {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length > 0) { setErrors(errs); return; }
-    const mailto = `mailto:hello@numina.hu?subject=Kapcsolatfelvétel – ${encodeURIComponent(form.nev)}&body=${encodeURIComponent(`Feladó: ${form.nev}\nE-mail: ${form.email}\n\n${form.uzenet}`)}`;
+    const mailto = `mailto:${SITE.email}?subject=Kapcsolatfelvétel – ${encodeURIComponent(form.nev)}&body=${encodeURIComponent(`Feladó: ${form.nev}\nE-mail: ${form.email}\n\n${form.uzenet}`)}`;
     const a = document.createElement("a");
     a.href = mailto;
     a.click();
@@ -40,7 +42,7 @@ export default function ContactPage() {
     `w-full bg-white px-5 py-4 rounded-xl outline-none focus:ring-4 focus:ring-numina-sage/10 border transition-[border-color,box-shadow] shadow-sm placeholder:text-numina-dark/20 ${errors[field] ? "border-red-300 focus:ring-red-100" : "border-numina-dark/5"}`;
 
   return (
-    <div className="pt-32 pb-20 md:pt-40 md:pb-40 px-6 max-w-7xl mx-auto">
+    <PageLayout>
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="grid lg:grid-cols-2 gap-12 lg:gap-20">
         <div className="text-center lg:text-left">
           <span className="text-numina-sage font-bold text-[10px] md:text-xs uppercase tracking-[0.3em] mb-4 md:mb-6 block">Hol érsz el minket?</span>
@@ -55,9 +57,9 @@ export default function ContactPage() {
               </div>
               <div>
                 <h4 className="font-bold text-numina-dark mb-2">Címünk</h4>
-                <p className="text-numina-dark/50 leading-relaxed text-base md:text-lg">1052 Budapest, Váci utca 12.</p>
+                <p className="text-numina-dark/50 leading-relaxed text-base md:text-lg">{SITE.address}</p>
                 <a
-                  href="https://maps.google.com/?q=1052+Budapest%2C+V%C3%A1ci+utca+12."
+                  href={`https://maps.google.com/?q=${encodeURIComponent(SITE.address)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 mt-3 text-[10px] font-bold uppercase tracking-widest text-numina-sage hover:underline"
@@ -96,11 +98,11 @@ export default function ContactPage() {
                 <h4 className="font-bold text-numina-dark mb-2">Kövess minket</h4>
                 <p className="text-numina-dark/50 mb-4 text-sm">Legfrissebb ajánlataink és eseményeink.</p>
                 <div className="flex flex-col gap-3">
-                  <a href="https://www.instagram.com/numina_budapest" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-numina-sage font-bold hover:underline group/link">
+                  <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-numina-sage font-bold hover:underline group/link">
                     <Instagram size={18} className="group-hover/link:scale-110 transition-transform" />
                     <span className="text-numina-dark/70 group-hover/link:text-numina-sage transition-colors">@numina_budapest</span>
                   </a>
-                  <a href="https://www.facebook.com/numinabudapest" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-numina-sage font-bold hover:underline group/link">
+                  <a href={SITE.facebook} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-numina-sage font-bold hover:underline group/link">
                     <Facebook size={18} className="group-hover/link:scale-110 transition-transform" />
                     <span className="text-numina-dark/70 group-hover/link:text-numina-sage transition-colors">Numina Budapest</span>
                   </a>
@@ -119,7 +121,7 @@ export default function ContactPage() {
               <h3 className="text-2xl font-bold text-numina-dark mb-3">Megnyílt az e-mail kliensed</h3>
               <p className="text-numina-dark/50 text-sm leading-relaxed">
                 Az üzeneted készen áll küldésre. Ha nem tudtad elküldeni, írj közvetlenül:{" "}
-                <a href="mailto:hello@numina.hu" className="text-numina-sage font-medium hover:underline">hello@numina.hu</a>
+                <a href={`mailto:${SITE.email}`} className="text-numina-sage font-medium hover:underline">{SITE.email}</a>
               </p>
               <button
                 onClick={() => { setSent(false); setForm({ nev: "", email: "", uzenet: "" }); }}
@@ -166,6 +168,6 @@ export default function ContactPage() {
           )}
         </div>
       </motion.div>
-    </div>
+    </PageLayout>
   );
 }

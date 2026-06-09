@@ -1,9 +1,9 @@
 import { ChevronRight } from "lucide-react";
-import type { Page } from "../../types";
+import type { NavigateFn } from "../../types";
 import { GALLERY_HOME_ITEMS } from "../../data/gallery";
 
 interface GallerySectionProps {
-  onNavigate: (p: Page) => void;
+  onNavigate: NavigateFn;
 }
 
 export default function GallerySection({ onNavigate }: GallerySectionProps) {
@@ -28,11 +28,11 @@ export default function GallerySection({ onNavigate }: GallerySectionProps) {
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-black/5 flex items-center justify-center group-hover:bg-numina-dark transition-all duration-500 group-hover:scale-110">
                 <ChevronRight className="w-4 h-4 text-numina-dark group-hover:text-white transition-colors duration-300" />
               </div>
-              <svg viewBox="0 0 48 48" className="absolute inset-0 w-full h-full -rotate-90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+              <svg viewBox="0 0 48 48" className="absolute inset-0 w-full h-full -rotate-90 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none text-numina-sage">
                 <circle
                   cx="24" cy="24" r="23"
                   fill="none"
-                  stroke="#7c8a7c"
+                  stroke="currentColor"
                   strokeWidth="1"
                   strokeDasharray="10 144"
                   className="animate-[spin_4s_linear_infinite]"

@@ -29,7 +29,7 @@ export const GALLERY_CATEGORIES: GalleryCategory[] = [
   { id: "hangulat", label: "Hangulat" },
 ];
 
-export const GALLERY_HOME_ITEMS = [
+export const GALLERY_HOME_ITEMS: Pick<GalleryImage, 'src' | 'title'>[] = [
   { src: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=800", title: "Botanikus belső tér" },
   { src: "https://images.unsplash.com/photo-1547595628-c61a29f496f0?auto=format&fit=crop&q=80&w=800", title: "Kézműves koktélok" },
   { src: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=800", title: "Latte art mesterfokon" },

@@ -3,6 +3,7 @@ import type { Page } from "./types";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CookieBanner from "./components/CookieBanner";
+import ErrorBoundary from "./components/ErrorBoundary";
 import HomePage from "./pages/home";
 
 const AboutPage = React.lazy(() => import("./pages/AboutPage"));
@@ -46,13 +47,15 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen selection:bg-numina-sage selection:text-white overflow-x-hidden flex flex-col">
-      <Navbar currentPage={currentPage} onNavigate={setCurrentPage} />
-      <main className="flex-grow">
-        <Suspense fallback={null}>{renderPage()}</Suspense>
-      </main>
-      <Footer onNavigate={setCurrentPage} />
-      <CookieBanner onNavigate={setCurrentPage} />
-    </div>
+    <ErrorBoundary>
+      <div className="min-h-screen selection:bg-numina-sage selection:text-white overflow-x-hidden flex flex-col">
+        <Navbar currentPage={currentPage} onNavigate={setCurrentPage} />
+        <main className="flex-grow">
+          <Suspense fallback={null}>{renderPage()}</Suspense>
+        </main>
+        <Footer onNavigate={setCurrentPage} />
+        <CookieBanner onNavigate={setCurrentPage} />
+      </div>
+    </ErrorBoundary>
   );
 }

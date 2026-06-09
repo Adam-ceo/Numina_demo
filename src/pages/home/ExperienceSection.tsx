@@ -1,7 +1,7 @@
 import React from "react";
 import { Coffee, Martini, Flower2 } from "lucide-react";
 import { motion } from "motion/react";
-import type { Page } from "../../types";
+import type { Page, NavigateFn } from "../../types";
 
 interface Experience {
   id: string;
@@ -11,6 +11,10 @@ interface Experience {
   img: string;
   align: "left" | "right";
   page: Page;
+}
+
+interface ExperienceSectionProps {
+  onNavigate: NavigateFn;
 }
 
 const experiences: Experience[] = [
@@ -42,10 +46,6 @@ const experiences: Experience[] = [
     page: "menu",
   },
 ];
-
-interface ExperienceSectionProps {
-  onNavigate: (p: Page) => void;
-}
 
 export default function ExperienceSection({ onNavigate }: ExperienceSectionProps) {
   return (

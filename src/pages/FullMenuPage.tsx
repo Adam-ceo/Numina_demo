@@ -1,10 +1,11 @@
 import { Coffee, Martini } from "lucide-react";
 import { motion } from "motion/react";
 import { coffeeMenu, foodMenu } from "../data/menu";
+import PageLayout from "../components/layout/PageLayout";
 
 export default function FullMenuPage() {
   return (
-    <div className="pt-32 pb-20 md:pt-40 md:pb-40 px-6 max-w-6xl mx-auto">
+    <PageLayout maxWidth="6xl">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-4 text-numina-dark tracking-tight">Étel- és Itallapunk</h1>
         <p className="text-center text-numina-dark/60 mb-12 md:mb-20 max-w-xl mx-auto font-light leading-relaxed text-sm md:text-base">
@@ -61,6 +62,6 @@ export default function FullMenuPage() {
           </div>
         </div>
       </motion.div>
-    </div>
+    </PageLayout>
   );
 }

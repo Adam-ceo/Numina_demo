@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useMemo } from "react";
-import { X, ChevronRight } from "lucide-react";
+import { X, ChevronRight, Search } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { GALLERY_IMAGES, GALLERY_CATEGORIES } from "../data/gallery";
 
@@ -17,7 +17,7 @@ export default function FullGalleryPage() {
 
   useEffect(() => {
     if (lightboxIdx !== null) lightboxCloseRef.current?.focus();
-  }, [lightboxIdx !== null]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [lightboxIdx]);
 
   useEffect(() => {
     if (lightboxIdx === null) return;
@@ -86,9 +86,7 @@ export default function FullGalleryPage() {
                 <p className="text-white/50 text-[11px] uppercase tracking-widest mt-0.5">{img.category}</p>
               </div>
               <div className="absolute top-3 right-3 w-7 h-7 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <svg className="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
+                <Search className="w-3.5 h-3.5 text-white" />
               </div>
             </motion.div>
           ))}

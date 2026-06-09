@@ -1,6 +1,6 @@
 export const SITE = {
   name: "Numina Caffé",
-  address: "Váci utca 12., Budapest, 1056",
+  address: "Váci utca 12., Budapest, 1052",
   phone: "+36 30 123 4567",
   email: "hello@numina.hu",
   instagram: "https://instagram.com/numina.caffe",

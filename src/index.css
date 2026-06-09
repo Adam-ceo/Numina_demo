@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-numina-dark: #2d312d;
+  --color-numina-grey: #f4f4f2;
+  --color-numina-sage: #7c8a7c;
+  --color-numina-cream: #faf9f6;
+  --color-numina-accent: #b59b7c;
+}
+
+@layer base {
+  body {
+    @apply bg-numina-cream text-numina-dark font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-semibold tracking-tight;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-numina-sage ring-offset-2 ring-offset-white;
+  }
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.glass-card {
+  @apply bg-white/40 backdrop-blur-md border border-white/40 shadow-sm;
+}
+
+.btn-primary {
+  @apply bg-numina-sage text-white px-7 py-3 rounded-xl font-sans text-sm font-medium hover:bg-numina-dark transition-colors duration-300 flex items-center gap-2;
+}
+
+.btn-secondary {
+  @apply border border-numina-dark/10 text-numina-dark px-7 py-3 rounded-xl font-sans text-sm font-medium hover:bg-white transition-colors duration-300 bg-white/50;
+}

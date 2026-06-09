@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Google Fonts loaded via <link> in index.html for performance (no render-blocking @import) */
+
+/* ─────────────────────────────────────────
+   DESIGN TOKENS — Farkas Autókozmetika
+   Philosophy: Linear Precision
+───────────────────────────────────────── */
+:root {
+  /* Surfaces */
+  --color-surface:           #ffffff;
+  --color-surface-raised:    #f8fafc;
+  --color-surface-sunken:    #f1f5f9;
+  --color-surface-inverse:   #0f172a;
+
+  /* Content */
+  --color-content-primary:   #0f172a;
+  --color-content-secondary: #475569;
+  --color-content-tertiary:  #94a3b8;
+  --color-content-inverse:   #ffffff;
+  --color-content-link:      #0ea5e9;
+
+  /* Borders */
+  --color-border:            #e2e8f0;
+  --color-border-subtle:     #f1f5f9;
+  --color-border-focus:      #0ea5e9;
+
+  /* Accent (Ice Blue) */
+  --color-accent:            #0ea5e9;
+  --color-accent-hover:      #0284c7;
+  --color-accent-active:     #0369a1;
+  --color-accent-subtle:     #e0f2fe;
+  --color-accent-muted:      #bae6fd;
+
+  /* Status */
+  --color-success:           #10b981;
+  --color-warning:           #f59e0b;
+  --color-error:             #ef4444;
+  --color-info:              #0ea5e9;
+
+  /* Shadows — szeparációhoz 1px border, NEM nagy fekete shadow */
+  --shadow-xs:         0 1px 2px rgba(15,23,42,0.06);
+  --shadow-sm:         0 1px 3px rgba(15,23,42,0.08), 0 1px 2px rgba(15,23,42,0.06);
+  --shadow-card-hover: 0 8px 24px rgba(15,23,42,0.10);
+
+  /* Motion */
+  --easing-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --easing-out:     cubic-bezier(0, 0, 0.2, 1);
+
+  /* shadcn-required tokens (kept for compatibility) */
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --border: 214.3 31.8% 91.4%;
+  --ring: 199 89% 48%;
+  --radius: 0.5rem;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 16px;
+  color: var(--color-content-primary);
+  background-color: var(--color-surface);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body { margin: 0; min-height: 100vh; font-family: "Inter", system-ui, sans-serif; }
+
+@layer base {
+  * { @apply border-border; }
+}
+
+/* Hide scrollbar utility */
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-ping { animation: none !important; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

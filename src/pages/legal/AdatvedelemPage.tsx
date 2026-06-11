@@ -4,7 +4,7 @@ import LegalPage from "./LegalPage";
 export default function AdatvedelemPage({ onNavigate }: { onNavigate: NavigateFn }) {
   return (
     <LegalPage title="Adatvédelmi Tájékoztató" onNavigate={onNavigate}>
-      <p className="text-xs text-numina-dark/40 mb-8">Utolsó módosítás: 2026. január 1. — Az EU 2016/679 rendeletének (GDPR) megfelelően</p>
+      <p className="text-xs text-numina-dark/70 mb-8">Utolsó módosítás: 2026. január 1. — Az EU 2016/679 rendeletének (GDPR) megfelelően</p>
       <h2 className="text-lg font-bold text-numina-dark mt-8 mb-3">1. Az adatkezelő</h2>
       <p>Numina Caffè Kft. | 1052 Budapest, Numinás köz 7. | hello@numina.hu | +36 1 123 4567</p>
       <h2 className="text-lg font-bold text-numina-dark mt-8 mb-3">2. Kezelt adatok és célok</h2>

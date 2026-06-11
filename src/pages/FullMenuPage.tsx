@@ -8,7 +8,7 @@ export default function FullMenuPage() {
     <PageLayout maxWidth="6xl">
       <m.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-4 text-numina-dark tracking-tight">Étel- és Itallapunk</h1>
-        <p className="text-center text-numina-dark/60 mb-12 md:mb-20 max-w-xl mx-auto font-light leading-relaxed text-sm md:text-base">
+        <p className="text-center text-numina-dark/70 mb-12 md:mb-20 max-w-xl mx-auto font-light leading-relaxed text-sm md:text-base">
           Gondosan válogatott alapanyagok, szezonalitás és odaadás minden egyes kortyban és falatban.
         </p>
 
@@ -20,15 +20,15 @@ export default function FullMenuPage() {
             <div className="space-y-12">
               {coffeeMenu.map((sec, si) => (
                 <div key={si}>
-                  <h3 className="uppercase text-[11px] md:text-[10px] font-bold tracking-[0.2em] text-numina-dark/30 mb-6 border-b border-black/5 pb-2">{sec.section}</h3>
+                  <h3 className="uppercase text-[11px] md:text-[10px] font-bold tracking-[0.2em] text-numina-dark/70 mb-6 border-b border-black/5 pb-2">{sec.section}</h3>
                   <div className="space-y-6">
                     {sec.items.map((item, k) => (
                       <div key={k} className="group cursor-default">
                         <div className="flex justify-between items-end mb-1">
                           <span className="font-bold text-numina-dark group-hover:text-numina-sage transition-colors duration-300">{item.name}</span>
-                          <span className="font-bold text-numina-sage">{item.price}</span>
+                          <span className="font-bold text-numina-sage-deep">{item.price}</span>
                         </div>
-                        <p className="text-xs text-numina-dark/60 font-light group-hover:text-numina-dark/80 transition-colors duration-300">{item.desc}</p>
+                        <p className="text-xs text-numina-dark/70 font-light group-hover:text-numina-dark/80 transition-colors duration-300">{item.desc}</p>
                       </div>
                     ))}
                   </div>
@@ -44,15 +44,15 @@ export default function FullMenuPage() {
             <div className="space-y-12">
               {foodMenu.map((sec, si) => (
                 <div key={si}>
-                  <h3 className="uppercase text-[11px] md:text-[10px] font-bold tracking-[0.2em] text-numina-dark/30 mb-6 border-b border-black/5 pb-2">{sec.section}</h3>
+                  <h3 className="uppercase text-[11px] md:text-[10px] font-bold tracking-[0.2em] text-numina-dark/70 mb-6 border-b border-black/5 pb-2">{sec.section}</h3>
                   <div className="space-y-6">
                     {sec.items.map((item, k) => (
                       <div key={k} className="group cursor-default">
                         <div className="flex justify-between items-end mb-1">
                           <span className="font-bold text-numina-dark group-hover:text-numina-sage transition-colors duration-300">{item.name}</span>
-                          <span className="font-bold text-numina-sage">{item.price}</span>
+                          <span className="font-bold text-numina-sage-deep">{item.price}</span>
                         </div>
-                        <p className="text-xs text-numina-dark/60 font-light group-hover:text-numina-dark/80 transition-colors duration-300">{item.desc}</p>
+                        <p className="text-xs text-numina-dark/70 font-light group-hover:text-numina-dark/80 transition-colors duration-300">{item.desc}</p>
                       </div>
                     ))}
                   </div>

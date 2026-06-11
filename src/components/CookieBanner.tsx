@@ -41,7 +41,7 @@ export default function CookieBanner({ onNavigate }: CookieBannerProps) {
           </p>
           <button
             onClick={accept}
-            className="shrink-0 bg-numina-sage hover:bg-numina-sage/80 text-white text-xs font-bold uppercase tracking-widest px-5 py-2.5 rounded-xl transition-all"
+            className="shrink-0 bg-numina-sage-deep hover:bg-numina-sage-deep/80 text-white text-xs font-bold uppercase tracking-widest px-5 py-2.5 rounded-xl transition-all"
           >
             Elfogadom
           </button>

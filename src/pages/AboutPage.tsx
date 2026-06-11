@@ -5,7 +5,7 @@ export default function AboutPage() {
   return (
     <PageLayout maxWidth="4xl">
       <m.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-        <span className="text-numina-sage font-bold text-[10px] md:text-xs uppercase tracking-[0.3em] mb-6 md:mb-8 block text-center md:text-left">A mi történetünk</span>
+        <span className="text-numina-sage-deep font-bold text-[10px] md:text-xs uppercase tracking-[0.3em] mb-6 md:mb-8 block text-center md:text-left">A mi történetünk</span>
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-numina-dark leading-[1.1] mb-12 md:mb-16 text-center md:text-left">
           Budapest szívében, <br /><span className="text-numina-sage italic">szívvel lélekkel.</span>
         </h1>
@@ -30,11 +30,11 @@ export default function AboutPage() {
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-12 py-8 md:py-10 border-y border-numina-dark/5 my-8 md:my-12">
             <div className="text-left">
-              <h4 className="text-numina-dark font-bold mb-4 uppercase tracking-wider text-xs">A „Numen" jelenléte</h4>
+              <h2 className="text-numina-dark font-bold mb-4 uppercase tracking-wider text-xs">A „Numen" jelenléte</h2>
               <p className="text-sm leading-relaxed">A név - Numina - a latin numen szóból ered, ami a természetben lakozó, tiszta szellemi jelenlétet jelöli. Ezt a békét hoztuk el a budapesti belváros szívébe.</p>
             </div>
             <div className="text-left">
-              <h4 className="text-numina-dark font-bold mb-4 uppercase tracking-wider text-xs">Mindent a minőségért</h4>
+              <h2 className="text-numina-dark font-bold mb-4 uppercase tracking-wider text-xs">Mindent a minőségért</h2>
               <p className="text-sm leading-relaxed">Saját pörkölésű kávénk mellett minden süteményünk helyi kistermelők alapanyagaiból, tartósítószer-mentesen készül minden nap.</p>
             </div>
           </div>

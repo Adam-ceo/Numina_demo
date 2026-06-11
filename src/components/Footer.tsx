@@ -1,4 +1,4 @@
-import { MapPin, Mail, Phone, Instagram, Facebook } from "lucide-react";
+﻿import { MapPin, Mail, Phone, Instagram, Facebook } from "lucide-react";
 import Logo from "./ui/Logo";
 import type { NavigateFn } from "../types";
 import { NAV_LINKS } from "../types";
@@ -33,13 +33,13 @@ export default function Footer({ onNavigate }: FooterProps) {
           </div>
 
           <div className="flex flex-col items-center md:items-start">
-            <h4 className="font-serif text-[11px] uppercase tracking-[0.2em] font-bold text-numina-sage mb-6 md:mb-8">Navigáció</h4>
-            <div className="flex flex-col gap-4 text-sm font-medium text-numina-dark/60">
+            <h3 className="font-serif text-[11px] uppercase tracking-[0.2em] font-bold text-numina-sage-deep mb-6 md:mb-8">Navigáció</h3>
+            <div className="flex flex-col gap-4 text-sm font-medium text-numina-dark/70">
               {NAV_LINKS.map((link) => (
                 <button
                   key={link.id}
                   onClick={() => onNavigate(link.id)}
-                  className="w-fit hover:text-numina-sage transition-colors text-left mx-auto md:mx-0"
+                  className="w-fit hover:text-numina-sage-deep transition-colors text-left mx-auto md:mx-0"
                 >
                   {link.label}
                 </button>
@@ -48,17 +48,17 @@ export default function Footer({ onNavigate }: FooterProps) {
           </div>
 
           <div className="flex flex-col items-center md:items-start">
-            <h4 className="font-serif text-[11px] uppercase tracking-[0.2em] font-bold text-numina-sage mb-6 md:mb-8">Elérhetőség</h4>
+            <h3 className="font-serif text-[11px] uppercase tracking-[0.2em] font-bold text-numina-sage-deep mb-6 md:mb-8">Elérhetőség</h3>
             <div className="space-y-6 font-light text-numina-dark/70 text-sm">
               <div className="flex gap-3">
                 <MapPin className="text-numina-sage w-4 h-4 shrink-0 mt-0.5" />
                 <p>{SITE.address}</p>
               </div>
-              <a href={`mailto:${SITE.email}`} className="flex gap-3 hover:text-numina-sage transition-colors">
+              <a href={`mailto:${SITE.email}`} className="flex gap-3 hover:text-numina-sage-deep transition-colors">
                 <Mail className="text-numina-sage w-4 h-4 shrink-0 mt-0.5" />
                 <p>{SITE.email}</p>
               </a>
-              <a href={`tel:${SITE.phone.replace(/\s/g, '')}`} className="flex gap-3 hover:text-numina-sage transition-colors">
+              <a href={`tel:${SITE.phone.replace(/\s/g, '')}`} className="flex gap-3 hover:text-numina-sage-deep transition-colors">
                 <Phone className="text-numina-sage w-4 h-4 shrink-0 mt-0.5" />
                 <p>{SITE.phone}</p>
               </a>
@@ -66,7 +66,7 @@ export default function Footer({ onNavigate }: FooterProps) {
           </div>
         </div>
 
-        <div className="pt-10 border-t border-numina-dark/5 text-numina-dark/40 text-[10px] font-medium flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="pt-10 border-t border-numina-dark/5 text-numina-dark/70 text-[10px] font-medium flex flex-col md:flex-row justify-between items-center gap-6">
           <p>© {new Date().getFullYear()} {SITE.name}. Minden jog fenntartva.</p>
           <div className="flex gap-10">
             {LEGAL_LINKS.map((link) => (

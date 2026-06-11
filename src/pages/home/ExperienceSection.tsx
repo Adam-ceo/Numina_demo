@@ -56,7 +56,7 @@ export default function ExperienceSection({ onNavigate }: ExperienceSectionProps
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-[10px] uppercase tracking-[0.5em] text-numina-sage font-bold mb-4 md:mb-6"
+            className="text-[10px] uppercase tracking-[0.5em] text-numina-sage-deep font-bold mb-4 md:mb-6"
           >
             A Numina Filozófia
           </m.p>

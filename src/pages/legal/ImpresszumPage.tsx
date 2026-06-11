@@ -14,7 +14,7 @@ export default function ImpresszumPage({ onNavigate }: { onNavigate: NavigateFn 
       </div>
       <h2 className="text-lg font-bold text-numina-dark mt-8 mb-3">Elérhetőség</h2>
       <div className="space-y-2">
-        <p><span className="font-medium text-numina-dark">E-mail:</span> <a href="mailto:hello@numina.hu" className="text-numina-sage hover:underline">hello@numina.hu</a></p>
+        <p><span className="font-medium text-numina-dark">E-mail:</span> <a href="mailto:hello@numina.hu" className="text-numina-sage-deep hover:underline">hello@numina.hu</a></p>
         <p><span className="font-medium text-numina-dark">Telefon:</span> +36 1 123 4567</p>
       </div>
       <h2 className="text-lg font-bold text-numina-dark mt-8 mb-3">Weboldal</h2>

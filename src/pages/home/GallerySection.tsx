@@ -13,7 +13,7 @@ export default function GallerySection({ onNavigate }: GallerySectionProps) {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 gap-6">
           <div className="max-w-xl">
             <h2 className="text-3xl md:text-4xl font-bold text-numina-dark mb-4">Pillanatok a Numinából</h2>
-            <p className="text-sm md:text-base text-numina-dark/60 font-light leading-relaxed">
+            <p className="text-sm md:text-base text-numina-dark/70 font-light leading-relaxed">
               Válogatás kedvenc momentumainkból, amik visszaadják a hely szellemét és a vendégeink mosolyát.
             </p>
           </div>
@@ -55,7 +55,7 @@ export default function GallerySection({ onNavigate }: GallerySectionProps) {
                   className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                 />
               </div>
-              <p className="font-semibold text-numina-dark/60 text-[10px] md:text-xs tracking-widest uppercase px-1">{item.title}</p>
+              <p className="font-semibold text-numina-dark/70 text-[10px] md:text-xs tracking-widest uppercase px-1">{item.title}</p>
             </div>
           ))}
         </div>

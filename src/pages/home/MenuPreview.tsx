@@ -1,4 +1,4 @@
-import { m } from "motion/react";
+﻿import { m } from "motion/react";
 import type { NavigateFn } from "../../types";
 import { menuPreviewItems } from "../../data/menu";
 
@@ -34,7 +34,7 @@ export default function MenuPreview({ onNavigate }: MenuPreviewProps) {
         </div>
 
         <div>
-          <span className="text-numina-sage font-sans text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold block mb-4">Mestermunkáink</span>
+          <span className="text-numina-sage-deep font-sans text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold block mb-4">Mestermunkáink</span>
           <h2 className="text-4xl md:text-5xl font-bold mb-8 md:mb-12 leading-tight">A vendégeink <span className="text-numina-sage">kedvencei</span></h2>
           <div className="space-y-8 md:space-y-10">
             {menuPreviewItems.map((item, i) => (
@@ -47,10 +47,10 @@ export default function MenuPreview({ onNavigate }: MenuPreviewProps) {
                 className="flex justify-between items-start pb-5 md:pb-6 border-b border-numina-dark/5 group cursor-default"
               >
                 <div className="max-w-[75%] transition-transform duration-500 group-hover:translate-x-2 text-left">
-                  <h4 className="text-lg md:text-xl font-bold mb-1 group-hover:text-numina-sage transition-colors">{item.name}</h4>
-                  <p className="text-[10px] md:text-xs text-numina-dark/60 font-sans leading-relaxed">{item.desc}</p>
+                  <h3 className="text-lg md:text-xl font-bold mb-1 group-hover:text-numina-sage transition-colors">{item.name}</h3>
+                  <p className="text-[10px] md:text-xs text-numina-dark/70 font-sans leading-relaxed">{item.desc}</p>
                 </div>
-                <span className="text-numina-sage font-bold text-sm shrink-0 ml-4">{item.price}</span>
+                <span className="text-numina-sage-deep font-bold text-sm shrink-0 ml-4">{item.price}</span>
               </m.div>
             ))}
           </div>

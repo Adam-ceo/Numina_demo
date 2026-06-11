@@ -45,7 +45,7 @@ export default function ContactPage() {
     <PageLayout>
       <m.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="grid lg:grid-cols-2 gap-12 lg:gap-20">
         <div className="text-center lg:text-left">
-          <span className="text-numina-sage font-bold text-[10px] md:text-xs uppercase tracking-[0.3em] mb-4 md:mb-6 block">Hol érsz el minket?</span>
+          <span className="text-numina-sage-deep font-bold text-[10px] md:text-xs uppercase tracking-[0.3em] mb-4 md:mb-6 block">Hol érsz el minket?</span>
           <h1 className="text-4xl md:text-6xl font-bold text-numina-dark leading-tight mb-8 md:mb-12">
             Lépj velünk <br /><span className="text-numina-sage italic lg:not-italic">kapcsolatba.</span>
           </h1>
@@ -56,13 +56,13 @@ export default function ContactPage() {
                 <MapPin className="text-numina-sage w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-bold text-numina-dark mb-2">Címünk</h4>
-                <p className="text-numina-dark/50 leading-relaxed text-base md:text-lg">{SITE.address}</p>
+                <h2 className="font-bold text-numina-dark mb-2">Címünk</h2>
+                <p className="text-numina-dark/70 leading-relaxed text-base md:text-lg">{SITE.address}</p>
                 <a
                   href={`https://maps.google.com/?q=${encodeURIComponent(SITE.address)}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-3 text-[10px] font-bold uppercase tracking-widest text-numina-sage hover:underline"
+                  className="inline-flex items-center gap-2 mt-3 text-[10px] font-bold uppercase tracking-widest text-numina-sage-deep hover:underline"
                 >
                   Megnyitás térképen <ChevronRight size={12} />
                 </a>
@@ -74,8 +74,8 @@ export default function ContactPage() {
                 <Clock className="text-numina-sage w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-bold text-numina-dark mb-4">Nyitvatartás</h4>
-                <div className="text-numina-dark/60 text-sm md:text-base space-y-3">
+                <h2 className="font-bold text-numina-dark mb-4">Nyitvatartás</h2>
+                <div className="text-numina-dark/70 text-sm md:text-base space-y-3">
                   {[
                     { days: "Hétfő – Csütörtök", hours: "08:00 – 22:00" },
                     { days: "Péntek – Szombat", hours: "08:00 – 00:00" },
@@ -95,14 +95,14 @@ export default function ContactPage() {
                 <Share2 className="text-numina-sage w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-bold text-numina-dark mb-2">Kövess minket</h4>
-                <p className="text-numina-dark/50 mb-4 text-sm">Legfrissebb ajánlataink és eseményeink.</p>
+                <h2 className="font-bold text-numina-dark mb-2">Kövess minket</h2>
+                <p className="text-numina-dark/70 mb-4 text-sm">Legfrissebb ajánlataink és eseményeink.</p>
                 <div className="flex flex-col gap-3">
-                  <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-numina-sage font-bold hover:underline group/link">
+                  <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-numina-sage-deep font-bold hover:underline group/link">
                     <Instagram size={18} className="group-hover/link:scale-110 transition-transform" />
                     <span className="text-numina-dark/70 group-hover/link:text-numina-sage transition-colors">@numina_budapest</span>
                   </a>
-                  <a href={SITE.facebook} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-numina-sage font-bold hover:underline group/link">
+                  <a href={SITE.facebook} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-numina-sage-deep font-bold hover:underline group/link">
                     <Facebook size={18} className="group-hover/link:scale-110 transition-transform" />
                     <span className="text-numina-dark/70 group-hover/link:text-numina-sage transition-colors">Numina Budapest</span>
                   </a>
@@ -119,13 +119,13 @@ export default function ContactPage() {
                 <Mail className="w-8 h-8 text-numina-sage" />
               </div>
               <h3 className="text-2xl font-bold text-numina-dark mb-3">Megnyílt az e-mail kliensed</h3>
-              <p className="text-numina-dark/50 text-sm leading-relaxed">
+              <p className="text-numina-dark/70 text-sm leading-relaxed">
                 Az üzeneted készen áll küldésre. Ha nem tudtad elküldeni, írj közvetlenül:{" "}
-                <a href={`mailto:${SITE.email}`} className="text-numina-sage font-medium hover:underline">{SITE.email}</a>
+                <a href={`mailto:${SITE.email}`} className="text-numina-sage-deep font-medium hover:underline">{SITE.email}</a>
               </p>
               <button
                 onClick={() => { setSent(false); setForm({ nev: "", email: "", uzenet: "" }); }}
-                className="mt-8 text-xs font-bold uppercase tracking-widest text-numina-dark/40 hover:text-numina-sage transition-colors"
+                className="mt-8 text-xs font-bold uppercase tracking-widest text-numina-dark/70 hover:text-numina-sage-deep transition-colors"
               >
                 Új üzenet írása
               </button>
@@ -133,10 +133,10 @@ export default function ContactPage() {
           ) : (
             <>
               <h3 className="text-2xl font-bold mb-8 italic text-numina-dark font-serif">Miben segíthetünk?</h3>
-              <p className="text-numina-dark/50 mb-10 text-sm leading-relaxed font-light">Érdeklődnél rendezvényről, vagy csak köszönni szeretnél? Írj nekünk bátran!</p>
+              <p className="text-numina-dark/70 mb-10 text-sm leading-relaxed font-light">Érdeklődnél rendezvényről, vagy csak köszönni szeretnél? Írj nekünk bátran!</p>
               <form onSubmit={handleSubmit} noValidate className="space-y-6">
                 <div className="space-y-2">
-                  <label htmlFor="nev" className="text-[10px] uppercase font-bold text-numina-dark/40 tracking-widest ml-1">Név</label>
+                  <label htmlFor="nev" className="text-[10px] uppercase font-bold text-numina-dark/70 tracking-widest ml-1">Név</label>
                   <input id="nev" type="text" value={form.nev}
                     onChange={e => { setForm(f => ({ ...f, nev: e.target.value })); setErrors(er => ({ ...er, nev: undefined })); }}
                     onBlur={e => { const err = validateField("nev", e.target.value); if (err) setErrors(er => ({ ...er, nev: err })); }}
@@ -144,7 +144,7 @@ export default function ContactPage() {
                   {errors.nev && <p className="text-red-400 text-xs ml-1">{errors.nev}</p>}
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-[10px] uppercase font-bold text-numina-dark/40 tracking-widest ml-1">E-mail</label>
+                  <label htmlFor="email" className="text-[10px] uppercase font-bold text-numina-dark/70 tracking-widest ml-1">E-mail</label>
                   <input id="email" type="email" value={form.email}
                     onChange={e => { setForm(f => ({ ...f, email: e.target.value })); setErrors(er => ({ ...er, email: undefined })); }}
                     onBlur={e => { const err = validateField("email", e.target.value); if (err) setErrors(er => ({ ...er, email: err })); }}
@@ -152,7 +152,7 @@ export default function ContactPage() {
                   {errors.email && <p className="text-red-400 text-xs ml-1">{errors.email}</p>}
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="uzenet" className="text-[10px] uppercase font-bold text-numina-dark/40 tracking-widest ml-1">Üzenet</label>
+                  <label htmlFor="uzenet" className="text-[10px] uppercase font-bold text-numina-dark/70 tracking-widest ml-1">Üzenet</label>
                   <textarea id="uzenet" value={form.uzenet}
                     onChange={e => { setForm(f => ({ ...f, uzenet: e.target.value })); setErrors(er => ({ ...er, uzenet: undefined })); }}
                     onBlur={e => { const err = validateField("uzenet", e.target.value); if (err) setErrors(er => ({ ...er, uzenet: err })); }}

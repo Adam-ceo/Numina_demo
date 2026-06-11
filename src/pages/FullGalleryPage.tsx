@@ -33,12 +33,12 @@ export default function FullGalleryPage() {
   return (
     <div className="pt-32 pb-20 md:pt-40 md:pb-40 px-6 max-w-7xl mx-auto">
       <m.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-        <span className="text-numina-sage font-bold text-[10px] uppercase tracking-[0.3em] mb-4 block">Vizuális napló</span>
+        <span className="text-numina-sage-deep font-bold text-[10px] uppercase tracking-[0.3em] mb-4 block">Vizuális napló</span>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 md:mb-12">
           <h1 className="text-4xl md:text-6xl font-bold text-numina-dark leading-tight">
             A Numina <span className="font-serif italic font-normal text-numina-sage">pillanatai.</span>
           </h1>
-          <p className="text-numina-dark/60 font-light text-sm max-w-xs leading-relaxed">
+          <p className="text-numina-dark/70 font-light text-sm max-w-xs leading-relaxed">
             Betekintés a hétköznapjainkba és a különleges pillanatainkba.
           </p>
         </div>
@@ -51,7 +51,7 @@ export default function FullGalleryPage() {
               className={`px-5 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest transition-[background-color,color,box-shadow] duration-300 ${
                 activeCategory === cat.id
                   ? "bg-numina-dark text-white shadow-md"
-                  : "bg-numina-grey/60 text-numina-dark/50 hover:bg-numina-grey hover:text-numina-dark"
+                  : "bg-numina-grey/60 text-numina-dark/70 hover:bg-numina-grey hover:text-numina-dark"
               }`}
             >
               {cat.label}

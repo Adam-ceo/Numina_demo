@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+﻿import { useState, useEffect, useRef } from "react";
 import { Menu, X, ChevronRight, Instagram, Facebook } from "lucide-react";
 import { m, AnimatePresence } from "motion/react";
 import Logo from "./ui/Logo";
@@ -51,7 +51,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
                 key={link.id}
                 onClick={() => onNavigate(link.id as Page)}
                 className={`transition-all duration-300 relative py-1 group/link ${
-                  currentPage === link.id ? "text-numina-sage" : "text-numina-dark opacity-70 hover:opacity-100"
+                  currentPage === link.id ? "text-numina-sage-deep" : "text-numina-dark opacity-70 hover:opacity-100"
                 }`}
               >
                 {link.label}
@@ -99,14 +99,14 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
                     transition={{ delay: 0.04 + i * 0.055, ease: [0.23, 1, 0.32, 1] }}
                     onClick={() => { onNavigate(link.id as Page); setIsMobileMenuOpen(false); }}
                     className={`group flex items-center justify-between py-3.5 border-b border-black/5 last:border-0 transition-colors duration-300 ${
-                      currentPage === link.id ? "text-numina-sage" : "text-numina-dark/60 hover:text-numina-dark"
+                      currentPage === link.id ? "text-numina-sage-deep" : "text-numina-dark/70 hover:text-numina-dark"
                     }`}
                   >
                     <span className="text-base font-medium tracking-tight">{link.label}</span>
                     <ChevronRight
                       size={14}
                       className={`transition-all duration-300 group-hover:translate-x-1 ${
-                        currentPage === link.id ? "opacity-100 text-numina-sage" : "opacity-0 group-hover:opacity-40"
+                        currentPage === link.id ? "opacity-100 text-numina-sage-deep" : "opacity-0 group-hover:opacity-40"
                       }`}
                     />
                   </m.button>
@@ -114,8 +114,8 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
 
                 <div className="mt-5 pt-4 border-t border-black/5 flex items-center justify-between">
                   <div>
-                    <p className="text-[10px] uppercase tracking-[0.2em] text-numina-sage font-bold mb-1">Nyitva ma</p>
-                    <p className="text-xs text-numina-dark/60 font-light">{SITE.hours.weekday}</p>
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-numina-sage-deep font-bold mb-1">Nyitva ma</p>
+                    <p className="text-xs text-numina-dark/70 font-light">{SITE.hours.weekday}</p>
                   </div>
                   <div className="flex gap-2">
                     <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" aria-label="Numina Caffé Instagram"

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { m, AnimatePresence } from "motion/react";
 import type { NavigateFn } from "../types";
 
@@ -9,7 +9,11 @@ interface CookieBannerProps {
 }
 
 export default function CookieBanner({ onNavigate }: CookieBannerProps) {
-  const [visible, setVisible] = useState(() => localStorage.getItem(COOKIE_KEY) !== "accepted");
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (localStorage.getItem(COOKIE_KEY) !== "accepted") setVisible(true);
+  }, []);
 
   const accept = () => {
     localStorage.setItem(COOKIE_KEY, "accepted");

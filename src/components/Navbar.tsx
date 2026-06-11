@@ -32,7 +32,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
 
   return (
     <div ref={navRef} className="fixed top-0 w-full z-50 flex justify-center pointer-events-none">
-      <nav className="mt-4 md:mt-6 w-[94%] max-w-[1100px] bg-white/90 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-[20px] px-6 md:px-10 flex flex-col text-numina-dark border border-white/20 pointer-events-auto ring-1 ring-black/[0.03]">
+      <nav className="mt-4 md:mt-6 w-[94%] max-w-[1100px] bg-white/95 md:bg-white/90 md:backdrop-blur-md shadow-lg md:shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-[20px] px-6 md:px-10 flex flex-col text-numina-dark border border-white/20 pointer-events-auto ring-1 ring-black/[0.03]">
         <div className="py-2 md:py-2.5 flex justify-between items-center">
           <div className="flex items-center gap-2 group cursor-pointer" onClick={() => onNavigate("home")}>
             <Logo size="sm" />

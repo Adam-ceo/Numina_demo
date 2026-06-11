@@ -11,8 +11,8 @@ export default function Hero({ onNavigate }: HeroProps) {
     <section id="hero" className="relative pt-32 pb-16 md:pt-48 md:pb-32 flex items-center overflow-hidden bg-white">
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center w-full">
         <m.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ y: 20 }}
+          animate={{ y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center lg:text-left order-1 lg:order-1"
         >
@@ -33,8 +33,8 @@ export default function Hero({ onNavigate }: HeroProps) {
         </m.div>
 
         <m.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ scale: 0.95 }}
+          animate={{ scale: 1 }}
           transition={{ duration: 1.2 }}
           className="relative order-2 lg:order-2"
         >

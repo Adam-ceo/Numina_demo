@@ -86,10 +86,11 @@ export default function ExperienceSection({ onNavigate }: ExperienceSectionProps
                   className="aspect-[4/5] md:aspect-[4/3] lg:aspect-[3/4] overflow-hidden rounded-2xl relative z-10 shadow-2xl"
                 >
                   <img
-                    srcSet={`${exp.img}?auto=format&fit=crop&q=80&fm=webp&w=600 600w,
-                             ${exp.img}?auto=format&fit=crop&q=80&fm=webp&w=1200 1200w`}
+                    srcSet={`${exp.img}?auto=format&fit=crop&q=70&fm=webp&w=480 480w,
+                             ${exp.img}?auto=format&fit=crop&q=70&fm=webp&w=800 800w,
+                             ${exp.img}?auto=format&fit=crop&q=70&fm=webp&w=1200 1200w`}
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    src={`${exp.img}?auto=format&fit=crop&q=80&fm=webp&w=1200`}
+                    src={`${exp.img}?auto=format&fit=crop&q=70&fm=webp&w=1200`}
                     alt={exp.title}
                     referrerPolicy="no-referrer"
                     loading={i === 0 ? "eager" : "lazy"}

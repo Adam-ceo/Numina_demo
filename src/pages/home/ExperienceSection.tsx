@@ -72,7 +72,7 @@ export default function ExperienceSection({ onNavigate }: ExperienceSectionProps
         </div>
 
         <div className="flex flex-col gap-24 md:gap-32 xl:gap-48">
-          {experiences.map((exp, i) => (
+          {experiences.map((exp) => (
             <div
               key={exp.id}
               className={`flex flex-col ${exp.align === "left" ? "md:flex-row" : "md:flex-row-reverse"} items-center gap-10 md:gap-20 xl:gap-32`}
@@ -87,13 +87,14 @@ export default function ExperienceSection({ onNavigate }: ExperienceSectionProps
                 >
                   <img
                     srcSet={`${exp.img}?auto=format&fit=crop&q=70&fm=webp&w=480 480w,
+                             ${exp.img}?auto=format&fit=crop&q=70&fm=webp&w=640 640w,
                              ${exp.img}?auto=format&fit=crop&q=70&fm=webp&w=800 800w,
                              ${exp.img}?auto=format&fit=crop&q=70&fm=webp&w=1200 1200w`}
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="(max-width: 768px) calc(100vw - 48px), 45vw"
                     src={`${exp.img}?auto=format&fit=crop&q=70&fm=webp&w=1200`}
                     alt={exp.title}
                     referrerPolicy="no-referrer"
-                    loading={i === 0 ? "eager" : "lazy"}
+                    loading="lazy"
                     decoding="async"
                     width={1200} height={900}
                     className="w-full h-full object-cover"

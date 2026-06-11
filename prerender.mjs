@@ -11,5 +11,17 @@ if (cssTag) {
   const css = await fs.readFile(`dist/${cssTag[1]}`, "utf8");
   html = html.replace(cssTag[0], `<style>${css}</style>`);
 }
+const entryTag = html.match(/<script type="module" crossorigin src="(\/assets\/[^"]+\.js)"><\/script>/);
+if (entryTag) {
+  const mods = [...html.matchAll(/\s*<link rel="modulepreload" crossorigin href="(\/assets\/[^"]+\.js)">/g)];
+  for (const m of mods) html = html.replace(m[0], "");
+  const hrefs = JSON.stringify(mods.map((m) => m[1]));
+  const loader =
+    `<script>(function(){var d=document;function go(){requestAnimationFrame(function(){requestAnimationFrame(function(){` +
+    `${hrefs}.forEach(function(h){var l=d.createElement("link");l.rel="modulepreload";l.crossOrigin="";l.href=h;d.head.appendChild(l)});` +
+    `var s=d.createElement("script");s.type="module";s.crossOrigin="";s.src=${JSON.stringify(entryTag[1])};d.head.appendChild(s)` +
+    `})})}if(d.readyState==="loading"){addEventListener("DOMContentLoaded",go)}else{go()}})()</script>`;
+  html = html.replace(entryTag[0], loader);
+}
 await fs.writeFile("dist/index.html", html);
 await fs.rm("dist-ssr", { recursive: true, force: true });

@@ -17,10 +17,12 @@ if (entryTag) {
   for (const m of mods) html = html.replace(m[0], "");
   const hrefs = JSON.stringify(mods.map((m) => m[1]));
   const loader =
-    `<script>(function(){var d=document;function go(){requestAnimationFrame(function(){requestAnimationFrame(function(){` +
+    `<script>(function(){var d=document,done=false;function inject(){if(done)return;done=true;` +
     `${hrefs}.forEach(function(h){var l=d.createElement("link");l.rel="modulepreload";l.crossOrigin="";l.href=h;d.head.appendChild(l)});` +
-    `var s=d.createElement("script");s.type="module";s.crossOrigin="";s.src=${JSON.stringify(entryTag[1])};d.head.appendChild(s)` +
-    `})})}if(d.readyState==="loading"){addEventListener("DOMContentLoaded",go)}else{go()}})()</script>`;
+    `var s=d.createElement("script");s.type="module";s.crossOrigin="";s.src=${JSON.stringify(entryTag[1])};d.head.appendChild(s)}` +
+    `function after(){requestAnimationFrame(function(){setTimeout(inject,0)})}` +
+    `try{new PerformanceObserver(function(l,o){if(l.getEntriesByName("first-contentful-paint").length){o.disconnect();after()}}).observe({type:"paint",buffered:true})}catch(e){addEventListener("load",after)}` +
+    `setTimeout(inject,3000)})()</script>`;
   html = html.replace(entryTag[0], loader);
 }
 await fs.writeFile("dist/index.html", html);

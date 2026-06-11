@@ -17,6 +17,13 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
 
   useEffect(() => {
     if (!isMobileMenuOpen) return;
+    const original = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = original; };
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) return;
     const handler = (e: MouseEvent | TouchEvent) => {
       if (navRef.current && !navRef.current.contains(e.target as Node)) {
         setIsMobileMenuOpen(false);

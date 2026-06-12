@@ -1,11 +1,11 @@
-import React from "react";
+import type { ReactNode } from "react";
 import { Coffee, Martini, Flower2 } from "lucide-react";
 import { m } from "motion/react";
 import type { Page, NavigateFn } from "../../types";
 
 interface Experience {
   id: string;
-  icon: React.ReactNode;
+  icon: ReactNode;
   title: string;
   desc: string;
   img: string;

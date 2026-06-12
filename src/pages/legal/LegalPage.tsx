@@ -1,4 +1,4 @@
-import React from "react";
+import type { ReactNode } from "react";
 import { ChevronRight } from "lucide-react";
 import { m } from "motion/react";
 import type { NavigateFn } from "../../types";
@@ -6,7 +6,7 @@ import PageLayout from "../../components/layout/PageLayout";
 
 interface LegalPageProps {
   title: string;
-  children: React.ReactNode;
+  children: ReactNode;
   onNavigate: NavigateFn;
 }
 

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState, type FormEvent } from "react";
 import { Clock, MapPin, Instagram, Facebook, ChevronRight, Mail, Share2 } from "lucide-react";
 import { m } from "motion/react";
 import PageLayout from "../components/layout/PageLayout";
-import { SITE } from "../config/site";
+import { SITE, OPENING_HOURS } from "../config/site";
 
 export default function ContactPage() {
   const [form, setForm] = useState({ nev: "", email: "", uzenet: "" });
@@ -27,7 +27,7 @@ export default function ContactPage() {
     return e;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length > 0) { setErrors(errs); return; }
@@ -76,11 +76,7 @@ export default function ContactPage() {
               <div>
                 <h2 className="font-bold text-numina-dark mb-4">Nyitvatartás</h2>
                 <div className="text-numina-dark/70 text-sm md:text-base space-y-3">
-                  {[
-                    { days: "Hétfő – Csütörtök", hours: "08:00 – 22:00" },
-                    { days: "Péntek – Szombat", hours: "08:00 – 00:00" },
-                    { days: "Vasárnap", hours: "09:00 – 21:00" },
-                  ].map(({ days, hours }) => (
+                  {OPENING_HOURS.map(({ days, hours }) => (
                     <div key={days} className="flex justify-between w-full max-w-[320px] border-b border-numina-dark/5 pb-2 gap-8">
                       <span className="font-medium text-numina-dark/70 shrink-0">{days}</span>
                       <span className="font-medium text-numina-dark whitespace-nowrap">{hours}</span>

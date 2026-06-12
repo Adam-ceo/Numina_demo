@@ -4,7 +4,7 @@ import { m, AnimatePresence } from "motion/react";
 import Logo from "./ui/Logo";
 import type { Page, NavigateFn } from "../types";
 import { NAV_LINKS } from "../types";
-import { SITE } from "../config/site";
+import { SITE, OPENING_HOURS } from "../config/site";
 
 interface NavbarProps {
   currentPage: Page;
@@ -14,6 +14,8 @@ interface NavbarProps {
 export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
+  const day = new Date().getDay();
+  const todayHours = OPENING_HOURS.find((entry) => day >= entry.from && day <= entry.to)?.hours;
 
   useEffect(() => {
     if (!isMobileMenuOpen) return;
@@ -49,7 +51,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
             {NAV_LINKS.map((link) => (
               <button
                 key={link.id}
-                onClick={() => onNavigate(link.id as Page)}
+                onClick={() => onNavigate(link.id)}
                 className={`transition-all duration-300 relative py-1 group/link ${
                   currentPage === link.id ? "text-numina-sage-deep" : "text-numina-dark opacity-70 hover:opacity-100"
                 }`}
@@ -97,7 +99,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
                     initial={{ opacity: 0, x: -16 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.04 + i * 0.055, ease: [0.23, 1, 0.32, 1] }}
-                    onClick={() => { onNavigate(link.id as Page); setIsMobileMenuOpen(false); }}
+                    onClick={() => { onNavigate(link.id); setIsMobileMenuOpen(false); }}
                     className={`group flex items-center justify-between py-3.5 border-b border-black/5 last:border-0 transition-colors duration-300 ${
                       currentPage === link.id ? "text-numina-sage-deep" : "text-numina-dark/70 hover:text-numina-dark"
                     }`}
@@ -113,10 +115,7 @@ export default function Navbar({ currentPage, onNavigate }: NavbarProps) {
                 ))}
 
                 <div className="mt-5 pt-4 border-t border-black/5 flex items-center justify-between">
-                  <div>
-                    <p className="text-[10px] uppercase tracking-[0.2em] text-numina-sage-deep font-bold mb-1">Nyitva ma</p>
-                    <p className="text-xs text-numina-dark/70 font-light">{SITE.hours.weekday}</p>
-                  </div>
+                  <p className="text-xs text-numina-dark/60 font-light">Ma {todayHours}</p>
                   <div className="flex gap-2">
                     <a href={SITE.instagram} target="_blank" rel="noopener noreferrer" aria-label="Numina Caffé Instagram"
                       className="w-9 h-9 rounded-xl border border-numina-dark/10 flex items-center justify-center text-numina-dark/40 hover:bg-numina-sage hover:text-white hover:border-numina-sage transition-all duration-300">

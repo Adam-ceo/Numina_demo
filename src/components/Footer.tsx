@@ -72,7 +72,7 @@ export default function Footer({ onNavigate }: FooterProps) {
             {LEGAL_LINKS.map((link) => (
               <button
                 key={link}
-                onClick={() => onNavigate(link as any)}
+                onClick={() => onNavigate(link)}
                 className="hover:text-numina-dark transition-colors uppercase tracking-widest"
               >
                 {link === "adatvedelem" && "Adatvédelem"}

@@ -19,7 +19,7 @@ export default function ImpresszumPage({ onNavigate }: { onNavigate: NavigateFn 
       </div>
       <h2 className="text-lg font-bold text-numina-dark mt-8 mb-3">Weboldal</h2>
       <p>A weboldal üzemeltetője: Numina Caffè Kft.</p>
-      <p>Tárhelyszolgáltató: Netlify, Inc. — 44 Montgomery Street, Suite 300, San Francisco, CA 94104, USA</p>
+      <p>Tárhelyszolgáltató: Vercel Inc. — 440 N Barranca Avenue #4133, Covina, CA 91723, USA</p>
       <h2 className="text-lg font-bold text-numina-dark mt-8 mb-3">Szerzői jog</h2>
       <p>Az oldalon található tartalmak (szöveg, képek, arculat) szerzői jogi védelem alatt állnak. Engedély nélküli felhasználásuk tilos.</p>
       <h2 className="text-lg font-bold text-numina-dark mt-8 mb-3">Fényképek</h2>

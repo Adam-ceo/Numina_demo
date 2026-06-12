@@ -5,12 +5,10 @@ export const SITE = {
   email: "hello@numina.hu",
   instagram: "https://instagram.com/numina.caffe",
   facebook: "https://facebook.com/numina.caffe",
-  hours: {
-    weekday: "H–P: 08:00 – 22:00",
-    weekend: "Szo–V: 09:00 – 23:00",
-  },
-  geo: {
-    lat: 47.4979,
-    lng: 19.0402,
-  },
 } as const;
+
+export const OPENING_HOURS = [
+  { days: "Hétfő – Csütörtök", hours: "08:00 – 22:00", from: 1, to: 4 },
+  { days: "Péntek – Szombat", hours: "08:00 – 00:00", from: 5, to: 6 },
+  { days: "Vasárnap", hours: "09:00 – 21:00", from: 0, to: 0 },
+] as const;

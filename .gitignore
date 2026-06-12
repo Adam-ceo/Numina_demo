@@ -5,7 +5,9 @@ coverage/
 .DS_Store
 *.log
 .env*
-!.env.example
 
 .vercel
 lighthouse-*.json
+.claude/
+dist-ssr/
+dist-baseline/

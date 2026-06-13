@@ -13,7 +13,7 @@ interface LegalPageProps {
 export default function LegalPage({ title, children, onNavigate }: LegalPageProps) {
   return (
     <PageLayout maxWidth="3xl">
-      <m.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+      <m.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, ease: "easeOut" }}>
         <button
           onClick={() => onNavigate("home")}
           className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-numina-dark/70 hover:text-numina-sage-deep transition-colors mb-10"

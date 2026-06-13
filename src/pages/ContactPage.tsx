@@ -43,7 +43,7 @@ export default function ContactPage() {
 
   return (
     <PageLayout>
-      <m.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="grid lg:grid-cols-2 gap-12 lg:gap-20">
+      <m.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, ease: "easeOut" }} className="grid lg:grid-cols-2 gap-12 lg:gap-20">
         <div className="text-center lg:text-left">
           <span className="text-numina-sage-deep font-bold text-[10px] md:text-xs uppercase tracking-[0.3em] mb-4 md:mb-6 block">Hol érsz el minket?</span>
           <h1 className="text-4xl md:text-6xl font-bold text-numina-dark leading-tight mb-8 md:mb-12">

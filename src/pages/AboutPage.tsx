@@ -4,7 +4,7 @@ import PageLayout from "../components/layout/PageLayout";
 export default function AboutPage() {
   return (
     <PageLayout maxWidth="4xl">
-      <m.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+      <m.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, ease: "easeOut" }}>
         <span className="text-numina-sage-deep font-bold text-[10px] md:text-xs uppercase tracking-[0.3em] mb-6 md:mb-8 block text-center md:text-left">A mi történetünk</span>
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-numina-dark leading-[1.1] mb-12 md:mb-16 text-center md:text-left">
           Budapest szívében, <br /><span className="text-numina-sage italic">szívvel lélekkel.</span>

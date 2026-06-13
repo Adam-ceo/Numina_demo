@@ -6,7 +6,7 @@ import PageLayout from "../components/layout/PageLayout";
 export default function FullMenuPage() {
   return (
     <PageLayout maxWidth="6xl">
-      <m.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
+      <m.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, ease: "easeOut" }}>
         <h1 className="text-4xl md:text-5xl font-bold text-center mb-4 text-numina-dark tracking-tight">Étel- és Itallapunk</h1>
         <p className="text-center text-numina-dark/70 mb-12 md:mb-20 max-w-xl mx-auto font-light leading-relaxed text-sm md:text-base">
           Gondosan válogatott alapanyagok, szezonalitás és odaadás minden egyes kortyban és falatban.
